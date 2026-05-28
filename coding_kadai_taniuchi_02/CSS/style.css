@@ -1,4 +1,4 @@
-@charset"UTF-8";
+@charset "UTF-8";
 /* cssリセット */
 
 /*利用するタグによってこちらの内容は増やす*/
@@ -77,31 +77,25 @@ max-width: 960px;
     margin:0 auto;
     justify-content: space-between;
     align-items:center;
-    padding:20px 0;
-    font-size:40px;
+    padding:30px 0;
     font-weight:bold;
      max-width: 960px;
 }
 
 .menu{
     display:flex;
-    list-style: none;
-   gap: 30px;
    }
 .menu li{
-   position: relative;
+    padding: 5px 25px;
     font-size:16px; 
+    border-right: 1px solid black;
     
 }
-/* 縦棒（最後以外） */
-.menu li:not(:last-child)::after {
-   content: "";
-  position: absolute;
-  right: -15px;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  background: black;
+.title{
+    font-size: 40px;
+}
+.menu :last-child{
+    border-right: none;
 }
 
 @media screen and (max-width:767px){
@@ -119,22 +113,19 @@ max-width: 960px;
 
 .wrap{
     display: block;
-    margin:0 auto;
+    
 
 }
 .blue-box {   
     width: 300px;
-    height:300px;
     margin: 20px auto; 
     }
 .wrap2{
     display: block;
-    margin:0 auto;
 
 }
 .red-box {   
     width: 300px;
-    height:300px;
     margin: 20px auto; 
     
     } 
