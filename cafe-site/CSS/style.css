@@ -1,0 +1,338 @@
+@charset "UTF-8";
+
+body{
+    font-family: "Noto Sans JP", sans-serif;
+    background-color: #E9D9C0   ;
+}
+    
+#header {
+    position: absolute;
+    top:30.5px;
+    left:0;
+    width: 100%;
+    z-index: 10;
+    
+}
+.header-inner{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+
+}
+.mainvisual-inner {
+    width: 100%;
+    margin: 0 auto;
+}  
+.mainvisual-inner img {
+    width: 100%;
+    display: block;
+   
+    
+}  
+.main-visual {
+    width: 100%;
+    position: relative;
+    margin-bottom: 132px;
+}
+
+
+
+.logo{
+    width: 434px;
+
+}
+.pc-menu ul{
+    display: flex;
+    gap: 48px;
+    
+
+}
+.pc-menu a{
+    font-size: 16px;
+    font-family: "Alatsi", sans-serif;
+    color: #ffffff;
+
+}
+
+.main-text{
+    text-align: center;
+    color: #4F270B;
+    margin-bottom: 144px;
+   
+}
+
+
+
+.contents {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+  
+}
+.main-inner{
+    margin-top: 132px;
+}
+
+.EN {
+    font-family: "Alatsi", sans-serif;
+  font-size: 26px;
+  margin-bottom: 40px;
+  letter-spacing: 5%;
+}
+.JA1{
+    font-family: "Noto Sans JP", sans-serif;
+  font-size: 64px;
+  margin-bottom: 16px;
+  
+  line-height: 1.5;
+  font-weight: 400;
+
+}
+.JA2{
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 24px;
+    line-height: 1.5;
+    
+
+
+}
+
+
+.aboutinner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px; 
+
+}
+
+.coffee img {
+  width: 100%;
+  margin-right: 40px;
+  height: auto;
+  border-bottom-right-radius: 64px;
+  
+}
+
+.about-text {
+  flex: 1; 
+  
+}
+
+.text {
+  font-size: 32px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.text-box {
+  text-align: left;
+  line-height: 1.8;
+  font-size: 14px;
+}
+.h2{
+   font-family: "Diplomata SC",cursive;
+    color: #D20202;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 32px;
+    
+     
+}
+
+.about-text h2 {
+    font-family: "Diplomata SC",cursive;
+    color: #D20202;
+    margin-bottom: 40px;
+    font-size: 40px;
+    
+}
+.aboutbox{
+    margin-bottom: 40px;
+}
+
+.item{
+    display: flex;
+    gap: 32px; 
+
+}
+.item > div {
+    flex: 1;
+    min-width: 0; 
+}
+
+.item img{
+    border-top-right-radius: 64px;
+    width: 100%;
+    height: auto;
+    display: block;
+  
+}
+
+ .item h3{
+   font-family: "Diplomata SC",cursive;
+    color: #D20202;
+    margin-bottom: 6px;
+    font-size: 26px;
+    margin-top: -10px;
+    
+ }
+
+.menu-box{
+   margin-bottom: 144px; 
+}
+
+
+
+ .gallery-box{
+   width: 100%;
+   margin-bottom: 144px; 
+   padding: 80px 0;
+}
+.gallery-inner {
+   max-width: none;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.picture img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+ .picture{
+    display: flex;
+    width: 100%;
+    
+}
+.picture p{
+    flex: 1;
+}
+
+
+.data{
+    font-weight: bold;
+    
+}
+
+.event-box{
+    max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-bottom: 144px; 
+}
+
+
+.event-list .date {
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 40px;
+}
+.event-list .text{
+  font-size: 20px;  
+}
+.event-list {
+    background: #ffffff;        
+    border: 1px solid #4f270B;  
+    max-width: 1000px;   
+    margin: 0 auto;     
+    padding: 32px 180px;
+    margin-bottom: 144px; 
+    
+}
+.access-box{
+  
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+  
+}
+
+.map iframe{
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+
+.footer img{
+    margin-bottom: 186px;
+    display: block;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+
+.info-list .label {
+    width: 90px;    
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+.info-list .value {
+    flex: 1;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.footer-box {
+  background: #ffffff;
+    padding: 40px 0;
+    }
+    
+.footer-text .copy {
+    font-size: 16px;
+    padding: auto;
+    margin-bottom: 60px;
+    
+}
+.footerinner{
+  max-width: 1000px;
+  margin: 80px auto;
+    display: flex;
+    gap: 40px;  
+}
+
+.copyinner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 80px;
+ 
+  }
+  .totop {
+    position: fixed;
+    right: 20px;   
+    bottom: 20px;  
+    z-index: 999; 
+}
+
+.totop img {
+    width: 120px;  
+    display: block;
+}
+
+ 
+
+
+
+
