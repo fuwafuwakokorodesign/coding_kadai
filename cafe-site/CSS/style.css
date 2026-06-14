@@ -269,10 +269,7 @@ body{
 
 
 
-.footer img{
-    margin-bottom: 186px;
-    display: block;
-}
+
 
 .info-list {
     list-style: none;
@@ -303,7 +300,7 @@ body{
 
 footer {
   background: #ffffff;
-    padding: 80px 10px 60px;
+padding: 80px 10px 60px;
     
     }
     
@@ -317,16 +314,19 @@ footer {
   max-width: 1000px;
   margin: 0px auto;
     display: flex;
-    gap: 40px;  
+    gap: 40px; 
+     
 }
 .footerinner p{
     width: 380px;
+    display: block;
 }
 
 .copyinner {
   max-width: 1000px;
   margin: 0 auto;
   padding-top: 80px;
+ 
  
  
  
