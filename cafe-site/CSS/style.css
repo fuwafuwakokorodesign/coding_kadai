@@ -14,8 +14,7 @@ body{
     
 }
 .header-inner{
-    max-width: 1440px;
-    margin: 0 auto;
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -185,7 +184,8 @@ body{
  .item p{
    text-align: left;
   line-height: 1.8;
-  font-size: 14px; 
+  font-size: 14px;
+  font-feature-settings: "palt"; 
  }
 
 .menu-box{
@@ -230,7 +230,15 @@ body{
   max-width: 1020px;
   margin: 0 auto;
   padding: 0 10px;
-  margin-bottom: 144px; 
+ 
+}
+.eventinner{
+    background: #ffffff;        
+    border: 1px solid #4f270B; 
+   justify-content: center;
+    margin-bottom: 144px;
+    display: flex;
+    padding: 32px 0;
 }
 
 
@@ -242,21 +250,14 @@ body{
 .event-list .text{
   font-size: 20px;  
 }
-.event-list {
-    background: #ffffff;        
-    border: 1px solid #4f270B;  
-    max-width: 1000px;   
-    margin: 0 auto;     
-    padding: 32px 180px;
-    margin-bottom: 144px; 
+.event-list li{
+    row-gap: 16px;
     
 }
+
 .access-box{
-  
   margin: 0 auto;
 
-  
-  
 }
 
 .map iframe{
