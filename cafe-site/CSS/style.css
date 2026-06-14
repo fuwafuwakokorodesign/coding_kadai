@@ -68,7 +68,7 @@ body{
 
 .contents {
   max-width: 1020px;
-  margin: 0px 10pxs;
+  margin: 0px auto;
   padding: 0 10px;
   box-sizing: border-box;
   
