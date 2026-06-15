@@ -243,7 +243,7 @@ body{
 
 
 .event-list .date {
-    font-weight: bold;
+    font-weight: 500;
     font-size: 20px;
     margin-right: 40px;
 }
