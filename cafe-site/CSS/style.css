@@ -80,6 +80,9 @@ body {
     font-size: 24px;
     line-height: 1.5;
 }
+.sp-br {
+    display: none;
+}
 
 .aboutinner {
     display: flex;
@@ -241,12 +244,6 @@ body {
     width: 90px;
     font-weight: bold;
     display: inline-block;
-}
-
-.info-list .value {
-    flex: 1;
-    display: inline-block;
-    white-space: nowrap;
 }
 
 footer {
@@ -411,10 +408,26 @@ footer {
     }
 }
 @media screen and (max-width: 767px) {
+    .logo {
+        position: absolute;
+        top: 13.5px;
+        left: 24px;
+    }
+    .main-text {
+        margin-bottom: 80px;
+    }
+    .sp-br {
+        display: inline;
+    }
+    .aboutbox {
+        margin-bottom: 80px;
+    }
+
     .about-text h2 {
         font-size: 32px;
-        margin-bottom: 40px;
+
         text-align: center;
+        margin-bottom: 40px;
     }
     .h2 {
         font-size: 32px;
@@ -422,13 +435,12 @@ footer {
         margin-bottom: 32px;
     }
     .contents {
-        max-width: 370px;
+        max-width: 100%;
     }
 
     .aboutinner {
         flex-direction: column;
-        gap: 40px;
-        margin-bottom: 32px;
+        margin-bottom: 0;
     }
 
     .coffee img {
@@ -438,7 +450,6 @@ footer {
     .text-box p {
         font-size: 14px;
         line-height: 2;
-        margin-bottom: 80px;
     }
     .item {
         flex-direction: column;
@@ -484,8 +495,6 @@ footer {
         box-sizing: border-box;
     }
     .event-list li {
-        display: flex;
-        flex-direction: column;
         padding-top: 0;
         padding-bottom: 0;
         row-gap: 0;
@@ -534,6 +543,9 @@ footer {
         display: inline-block;
         white-space: nowrap;
     }
+    .map iframe {
+        height: 240px;
+    }
 
     .footer-text .copy {
         font-size: 16px;
@@ -541,23 +553,23 @@ footer {
         margin-bottom: 80px;
     }
     .footerinner {
-        max-width: 350px;
+        max-width: 100%;
         width: 100%;
         box-sizing: border-box;
         row-gap: 0;
         flex-direction: column;
     }
     .footerinner p {
-        width: auto;
+        width: 244px;
         display: block;
         margin-bottom: 39px;
     }
 
     .copyinner {
-        max-width: 350px;
+        max-width: 100%;
         width: 100%;
         box-sizing: border-box;
         margin: 0 auto;
-        padding-top: 248px;
+        padding-top: 80px;
     }
 }

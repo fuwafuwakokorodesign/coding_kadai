@@ -25,11 +25,11 @@
             </h1>
             <nav class="pc-menu">
                 <ul>
-                    <li><a href="">ABOUT US</a></li>
-                    <li><a href="">MENU</a></li>
-                    <li><a href="">GALLERY</a></li>
-                    <li><a href="">EVENT</a></li>
-                    <li><a href="">ACCESS</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#event">EVENT</a></li>
+                    <li><a href="#access">ACCESS</a></li>
                 </ul>
 
             </nav>
@@ -38,11 +38,11 @@
             </div>
             <nav class="sp-menu">
                 <ul>
-                    <li><a href="">ABOUT US</a></li>
-                    <li><a href="">MENU</a></li>
-                    <li><a href="">GALLERY</a></li>
-                    <li><a href="">EVENT</a></li>
-                    <li><a href="">ACCESS</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#event">EVENT</a></li>
+                    <li><a href="#access">ACCESS</a></li>
                 </ul>
 
             </nav>
@@ -71,16 +71,22 @@
                     1杯のコーヒーから
                 </p>
 
-                <p class="JA2">毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。</p>
+                <p class="JA2">毎日を丁寧に大切に過ごしたい。<br class="sp-br">だからこそ一杯一杯丁寧にコーヒーを入れ<br
+                        class="sp-br">足を運んでくれるお客さんには落ち着く空間と<br class="sp-br">こだわりのコーヒーを提供したい。</p>
 
 
             </div>
 
         </section>
-        <section class="aboutbox">
+        <section id="about" class="aboutbox">
             <div class="aboutinner">
                 <div class="coffee">
-                    <p><img src="images/pc_about-100.jpg" alt="コーヒーの写真"></p>
+                    <p>
+                        <picture>
+                            <source srcset="images/about_us@2x-100.jpg" media="(max-width: 767px)">
+                            <img src="images/pc_about-100.jpg" alt="コーヒーの写真">
+                        </picture>
+                    </p>
                 </div>
 
                 <div class="about-text">
@@ -100,7 +106,7 @@
             </div>
 
         </section>
-        <section class="menu-box">
+        <section id="menu" class="menu-box">
             <h2 class="h2">MENU</h2>
             <div class="menuinner">
 
@@ -131,7 +137,7 @@
 
 
     </div>
-    <section class="gallery-box">
+    <section id="gallery" class="gallery-box">
         <h2 class="h2">GALLERY</h2>
 
         <div class="gallery-inner">
@@ -146,7 +152,7 @@
         </div>
     </section>
 
-    <section class="event-box">
+    <section id="event" class="event-box">
         <h2 class="h2">EVENT</h2>
         <div class="eventinner">
 
@@ -166,7 +172,7 @@
             </ul>
         </div>
     </section>
-    <section class="access-box">
+    <section id="access" class="access-box">
         <h2 class="h2">ACCESS</h2>
         <div class="accessinner">
 
