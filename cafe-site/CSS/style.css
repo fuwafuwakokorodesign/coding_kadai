@@ -1,4 +1,7 @@
 @charset "UTF-8";
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: "Noto Sans JP", sans-serif;
@@ -391,16 +394,19 @@ footer {
     }
 
     .EN {
-        font-size: 16px;
+        font-size: 2.4vw;
     }
 
     .JA1 {
-        font-size: 31px;
+        font-size: 5.8vw;
         margin-bottom: 24px;
     }
     .JA2 {
-        font-size: 16px;
+        font-size: 2.4vw;
         line-height: 2;
+    }
+    .sp-br {
+        display: inline;
     }
     .text {
         font-size: 24px;
@@ -437,6 +443,16 @@ footer {
     .contents {
         max-width: 100%;
     }
+    .EN {
+        font-size: 4vw;
+    }
+
+    .JA1 {
+        font-size: 8vw;
+    }
+    .JA2 {
+        font-size: 4vw;
+    }
 
     .aboutinner {
         flex-direction: column;
@@ -445,6 +461,7 @@ footer {
 
     .coffee img {
         margin-right: 0;
+        border-bottom-right-radius: 0;
     }
 
     .text-box p {
