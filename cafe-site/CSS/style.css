@@ -185,12 +185,11 @@ body {
 }
 
 .picture {
-    display: flex;
-    width: 100%;
+    display: block;
 }
 .picture p {
-    flex: 1;
-    width: 100%;
+    flex: none;
+    width: auto;
 }
 
 .data {
@@ -289,6 +288,15 @@ footer {
 .hamburger,
 .sp-menu {
     display: none;
+}
+.slick-dots li.slick-active button:before {
+    font-size: 10px;
+}
+.slick-dots li button:before {
+    font-size: 10px;
+}
+.slick-dots {
+    bottom: -65px;
 }
 
 @media screen and (max-width: 1100px) {
@@ -485,19 +493,15 @@ footer {
     .menu-box {
         margin-bottom: 80px;
     }
+    .picture {
+        display: block;
+    }
 
-    .picture p {
+    .picture-modal img {
         width: 100%;
-        flex: 1;
     }
-
-    /* 2枚目以降を非表示 */
-    .picture p:nth-child(n + 2) {
-        display: none;
-    }
-
-    .gallery-box {
-        margin-bottom: 80px;
+    .picture-slider img {
+        width: 100%;
     }
 
     .eventinner {
