@@ -1067,6 +1067,13 @@ h2 {
         margin: 0 auto;
         text-align: left;
         line-height: 2;
+        font-size: 14px;
+    }
+    .job-title {
+        font-size: 14px;
+    }
+    .name-ja {
+        font-size: 14px;
     }
 
     .photo-pc {
@@ -1084,6 +1091,13 @@ h2 {
         width: 22vw;
         right: 8%;
     }
+    .work-text,
+    .work-text2 {
+        font-size: 14px;
+    }
+    .step-text {
+        font-size: 14px;
+    }
 
     /* ボタン・フッター・Grid */
     .contact-btn {
@@ -1096,6 +1110,7 @@ h2 {
     .contact-btn a {
         width: 70%;
         max-width: 270px;
+        font-size: 14px;
     }
 
     .contact-btn a img {
@@ -1182,5 +1197,11 @@ h2 {
     .contact-btn2 a {
         width: 70%;
         max-width: 270px;
+    }
+    .graphic-num {
+        font-size: 18px;
+    }
+    .graphic-title {
+        font-size: 14px;
     }
 }
