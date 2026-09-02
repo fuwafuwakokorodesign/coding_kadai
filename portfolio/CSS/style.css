@@ -10,46 +10,32 @@ body {
     font-family: "Noto Serif JP", serif;
     color: #ffffff;
     position: relative;
-    background-image:
-        linear-gradient(
-            180deg,
-            rgba(77, 106, 165, 1),
-            rgba(99, 128, 185, 1) 23%,
-            rgba(59, 155, 176, 0.7) 28%,
-            rgba(99, 128, 185, 0.5) 40%,
-            rgba(251, 252, 237, 1) 49% 80%,
-            rgba(104, 134, 195, 0.7) 89%,
-            rgba(77, 106, 165, 1) 110%
-        ),
-        linear-gradient(
-            180deg,
-            rgba(77, 106, 165, 0.7),
-            rgba(99, 128, 185, 0.7) 25%,
-            rgba(59, 155, 176, 0.7) 29%,
-            rgba(99, 128, 185, 0.7) 41%
-        );
+    background-image: linear-gradient(
+        180deg,
+        rgba(77, 106, 165, 1),
+        rgba(99, 128, 185, 1) 23%,
+        rgba(59, 155, 176, 0.7) 28%,
+        rgba(99, 128, 185, 0.5) 40%,
+        rgba(251, 252, 237, 1) 49% 78%,
+        rgba(104, 134, 195, 0.7) 87%,
+        rgba(77, 106, 165, 1) 110%
+    );
 }
-
-h2 {
-    font-size: 32px;
-    font-family: "Cormorant Garamond", serif;
+#message {
+    scroll-margin-top: 120px;
 }
-
-/* スクロール位置の補正 */
-#message,
 #about,
-#works,
+#works {
+    scroll-margin-top: 120px;
+}
 #flow,
 #contact {
     scroll-margin-top: 160px;
     position: relative;
 }
-
-#about,
-#works,
-#flow,
-#contact {
-    z-index: 10;
+h2 {
+    font-size: 32px;
+    font-family: "Cormorant Garamond", serif;
 }
 
 /* ==========================================
@@ -88,7 +74,7 @@ h2 {
 }
 
 .header-nav.after-works a,
-.logo.after-works p {
+.logo.after-works {
     color: #4d6aa5;
 }
 
@@ -303,14 +289,14 @@ h2 {
 
 /* 1行目（例：8文字） */
 .line1 {
-    animation: typingLine1 1.2s steps(8) forwards;
-    animation-delay: 2.2s;
+    animation: typingLine1 1.2s forwards;
+    animation-delay: 0.3s;
 }
 
 /* 2行目（例：11文字） */
 .line2 {
-    animation: typingLine2 1.65s steps(11) forwards;
-    animation-delay: 3.4s;
+    animation: typingLine2 1.65s forwards;
+    animation-delay: 1s;
 }
 
 /* ==========================================
@@ -404,29 +390,20 @@ h2 {
 
 /* 背景雲・月 */
 .cloud-set {
-    position: sticky;
-    bottom: 0;
+    position: relative;
     width: 100%;
     height: auto;
     pointer-events: none;
+    transition: opacity 0.4s ease;
 }
 
+/* JSでスクロール固定された時のスタイル */
 .cloud-fixed {
-    position: fixed;
+    position: fixed !important; /* JSによる画面固定を最優先にする */
     left: 0;
     width: 100%;
     pointer-events: none;
-}
-
-.cloud-set1 {
-    top: 0;
-}
-.cloud-set2 {
-    top: 40px;
-    height: 200px;
-}
-.cloud-set3 {
-    top: 120px;
+    z-index: 15;
 }
 
 .cloud {
@@ -466,7 +443,10 @@ h2 {
 #about,
 #works {
     position: relative;
+    z-index: 10;
+    width: 100%;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
 /* Message */
@@ -479,6 +459,9 @@ h2 {
     align-items: flex-start;
     width: 100%;
     margin: 250px auto;
+    /* ▼ ガタつき防止の安全策 */
+    min-height: 400px; /* 縦書きテキストが収まる十分な高さを確保 */
+    box-sizing: border-box;
 }
 
 .text-block {
@@ -493,7 +476,7 @@ h2 {
 .message-star {
     position: absolute;
     top: -80px;
-    right: calc(20vw - 40px);
+    right: 5%;
     width: 10vw;
     pointer-events: none;
 }
@@ -606,6 +589,10 @@ h2 {
     flex-direction: column;
     align-items: center;
     text-align: left;
+}
+.work-item-title {
+    color: rgba(77, 106, 165, 0.8);
+    margin: 30px;
 }
 
 .work-text,
@@ -849,9 +836,9 @@ h2 {
 }
 
 .modal-close {
-    position: fixed;
-    top: 20px;
-    right: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     font-size: 40px;
     color: #274555;
     cursor: pointer;
@@ -984,10 +971,84 @@ h2 {
         left: auto;
         width: 0;
     }
+    /* About (スマホ縦並び) */
+    #about .about-content {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 40px;
+    }
+
+    /* 写真の親要素を小さくする */
+    .about-photo {
+        width: 65%; /* ← 70%でもOK。65%が一番バランス良い */
+        margin: 0;
+        padding: 0;
+    }
+
+    /* PC写真は非表示 */
+    .photo-pc {
+        display: none !important;
+    }
+
+    /* スマホ写真を使う */
+    .photo-sp {
+        display: block !important;
+        width: 100%; /* 親の65%にフィット */
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* スマホだけ改行を消す */
+    .about-text br {
+        display: none;
+    }
+
+    .sub-title {
+        font-size: 14px;
+    }
+
+    .job-title {
+        font-size: 14px;
+    }
+    .name-ja {
+        font-size: 14px;
+    }
+
+    .about-text {
+        width: 90%;
+        margin: 0 auto;
+        line-height: 1.9;
+        text-align: left;
+    }
+
+    .profile-block {
+        margin-bottom: 1.8em; /* 段落の余白をつける */
+        font-size: 14px; /* スマホ向けに少し小さく */
+    }
 }
 
 /* --- スマホサイズ（768px以下） --- */
 @media screen and (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        font-family: "Noto Serif JP", serif;
+        color: #ffffff;
+        position: relative;
+        background-image: linear-gradient(
+            180deg,
+            rgba(77, 106, 165, 1),
+            rgba(99, 128, 185, 1) 10%,
+            rgba(59, 155, 176, 0.7) 25%,
+            rgba(99, 128, 185, 0.5) 37%,
+            rgba(251, 252, 237, 1) 47% 75%,
+            rgba(104, 134, 195, 0.7) 90%,
+            rgba(77, 106, 165, 1) 110%
+        );
+    }
     #message,
     #about,
     #works,
@@ -1020,15 +1081,17 @@ h2 {
     #message {
         min-height: auto;
         padding-bottom: 150px;
+        overflow: hidden; /* 内部要素の飛び出しによる揺れを防止 */
     }
 
     /* Message (スマホ横書き) */
     .text-wrap {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         width: 80%;
-        margin: 200px auto;
+        margin: 150px auto;
         gap: 30px;
     }
 
@@ -1042,16 +1105,53 @@ h2 {
     }
 
     .message-star {
-        width: 30%;
-        height: 40px;
         position: absolute;
         top: -100px;
-        right: 0;
+        right: 10px;
+        width: 15%;
+        height: auto;
+        pointer-events: none;
+    }
+    .title-wrap {
+        margin-top: 150px;
+    }
+    .title-wrap2 {
+        margin-top: 150px;
+    }
+    /* 雲の基本トランジションをゆっくりにする */
+    .cloud-set {
+        /* 変化の速度を 0.4s から 1s〜1.2s に延ばして滑らかに */
+        transition:
+            transform 1.2s cubic-bezier(0.25, 1, 0.5, 1),
+            opacity 0.8s ease;
     }
 
-    /* About (スマホ縦並び) */
-    .sub-title {
-        font-size: 14px;
+    /* スマホ画面に合わせて雲の固定位置・高さを微調整 */
+    .cloud-set2 {
+        top: 20px; /* PC版の40pxから微調整 */
+        height: 120px; /* 画像の縦幅が大きすぎて一気に上がって見えないよう抑える */
+    }
+
+    .cloud-set3 {
+        top: 60px; /* PC版の120pxから微調整 */
+    }
+
+    /* 雲の画像自体の縮小 */
+    .cloud {
+        width: 120%; /* 少し大きめにして端の切れを防ぐ */
+        left: -10%;
+    }
+
+    .moon2 {
+        position: absolute;
+        width: 22vw;
+        right: 8%;
+    }
+    .about-wrap {
+        margin-top: 150px;
+    }
+    .about-text br {
+        display: none;
     }
 
     #about .about-content {
@@ -1059,6 +1159,7 @@ h2 {
         align-items: flex-start;
         width: 100%;
         gap: 40px;
+        margin: 90px 0 150px;
     }
 
     #about .about-text {
@@ -1069,9 +1170,13 @@ h2 {
         line-height: 2;
         font-size: 14px;
     }
-    .job-title {
-        font-size: 14px;
+
+    .about-photo {
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
+    .job-title,
     .name-ja {
         font-size: 14px;
     }
@@ -1079,18 +1184,12 @@ h2 {
     .photo-pc {
         display: none !important;
     }
-
     .photo-sp {
         display: block !important;
         width: 95%;
         margin-left: 0;
     }
 
-    .moon2 {
-        position: absolute;
-        width: 22vw;
-        right: 8%;
-    }
     .work-text,
     .work-text2 {
         font-size: 14px;

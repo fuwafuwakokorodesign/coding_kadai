@@ -63,10 +63,10 @@
         <!-- タイトル -->
         <div class="title-wrap2">
             <h2 class="work-title-text">works</h2>
-            <img src="images/title-star.png" alt="星">
+            <img src="images/title-star.png" alt="">
 
         </div>
-        <h3 class="work-sub-title2">これまで制作したもの</h3>
+        <p class="work-sub-title2">これまで制作したもの</p>
 
 
 
@@ -220,6 +220,13 @@
                     <p class="graphic-title">ロゴ</p>
                 </div>
             </div>
+            <div class="graphic-card hidden-card" data-category="web">
+                <img src="images/work19.png" alt="作品19">
+                <div class="graphic-info">
+                    <p class="graphic-num">19/ fuwafuwakokoro</p>
+                    <p class="graphic-title">サイトデザイン・コーディング</p>
+                </div>
+            </div>
             <!-- 必要な数だけ複製して追加 -->
         </div>
     </section>
@@ -255,7 +262,7 @@
 
     <section class="to-top">
         <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-            <img src="images/Back to Top.png" alt="トップへ戻る">
+            <img src="images/Back-to-Top.png" alt="トップへ戻る">
         </a>
     </section>
 
@@ -289,7 +296,10 @@
         </div>
 
     </footer>
-    <!-- ★★★ ここを all-work.html の最後に入れる ★★★ -->
+    <!-- ================================
+        ★ モーダル（作品クリックで表示）
+        ※ src="" は「JSで後から入れるため」
+    =================================== -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
@@ -298,148 +308,9 @@
         </div>
     </div>
 
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const cards = document.querySelectorAll('.graphic-card');
-            const moreBtn = document.getElementById('moreBtn');
-            const hiddenCards = document.querySelectorAll('.hidden-card');
-
-            // --- 1. フィルター機能 ---
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterButtons.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    const filter = btn.dataset.filter;
-
-                    cards.forEach(card => {
-                        const category = card.dataset.category;
-
-                        if (filter === "all" || filter === category) {
-                            if (card.classList.contains('hidden-card')) {
-                                if (card.classList.contains('show')) {
-                                    card.style.display = "block";
-                                } else {
-                                    card.style.display = "none";
-                                }
-                            } else {
-                                card.style.display = "block";
-                            }
-                        } else {
-                            card.style.display = "none";
-                        }
-                    });
-                });
-            });
-
-            // URLパラメータの初期フィルター適用
-            const params = new URLSearchParams(window.location.search);
-            const initialFilter = params.get("filter");
-            if (initialFilter) {
-                const targetBtn = document.querySelector(`.filter-btn[data-filter="${initialFilter}"]`);
-                if (targetBtn) targetBtn.click();
-            }
-
-            // --- 2. 「もっと見る」ボタン ---
-            if (moreBtn) {
-                moreBtn.addEventListener('click', () => {
-                    hiddenCards.forEach(card => {
-                        card.classList.add('show');
-                        const currentFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
-                        if (currentFilter === 'all' || card.dataset.category === currentFilter) {
-                            card.style.display = 'block';
-                        }
-                    });
-                    moreBtn.style.display = 'none';
-                });
-            }
-
-            // --- 3. モーダル機能（PC / SP画像切替対応） ---
-            const modal = document.getElementById("modal");
-            const modalImg = document.getElementById("modal-img");
-            const modalText = document.getElementById("modal-text");
-            const closeBtn = document.querySelector(".modal-close");
-
-            // SP版写真名: sp_modal-1.png 〜 sp_modal-18.png
-            const workData = [
-                { img: "images/modal-01.png", spImg: "images/sp_modal-1.png" },
-                { img: "images/modal-02.png", spImg: "images/sp_modal-2.png" },
-                { img: "images/modal-03.png", spImg: "images/sp_modal-3.png" },
-                { img: "images/modal-04.png", spImg: "images/sp_modal-4.png" },
-                { img: "images/modal-05.png", spImg: "images/sp_modal-5.png" },
-                { img: "images/modal-06.png", spImg: "images/sp_modal-6.png" },
-                { img: "images/modal-07.png", spImg: "images/sp_modal-7.png" },
-                { img: "images/modal-08.png", spImg: "images/sp_modal-8.png" },
-                { img: "images/modal-09.png", spImg: "images/sp_modal-9.png" },
-                { img: "images/modal-10.png", spImg: "images/sp_modal-10.png" },
-                { img: "images/modal-11.png", spImg: "images/sp_modal-11.png" },
-                { img: "images/modal-12.png", spImg: "images/sp_modal-12.png" },
-                { img: "images/modal-13.png", spImg: "images/sp_modal-13.png" },
-                { img: "images/modal-14.png", spImg: "images/sp_modal-14.png" },
-                { img: "images/modal-15.png", spImg: "images/sp_modal-15.png" },
-                { img: "images/modal-16.png", spImg: "images/sp_modal-16.png" },
-                { img: "images/modal-17.png", spImg: "images/sp_modal-17.png" },
-                { img: "images/modal-18.png", spImg: "images/sp_modal-18.png" }
-            ];
-
-            const workImages = document.querySelectorAll(".graphic-card img");
-
-            workImages.forEach((img, index) => {
-                img.addEventListener("click", () => {
-                    const item = workData[index];
-                    if (item) {
-                        modal.style.display = "block";
-
-                        // 画面幅768px以下の場合、SP用画像を表示
-                        const isMobile = window.innerWidth <= 768;
-                        if (isMobile && item.spImg) {
-                            modalImg.src = item.spImg;
-                        } else {
-                            modalImg.src = item.img;
-                        }
-
-                        if (modalText && item.text) {
-                            modalText.textContent = item.text;
-                        }
-                    }
-                });
-            });
-
-            if (closeBtn) {
-                closeBtn.addEventListener("click", () => {
-                    modal.style.display = "none";
-                });
-            }
-
-            if (modal) {
-                modal.addEventListener("click", (e) => {
-                    if (e.target === modal) {
-                        modal.style.display = "none";
-                    }
-                });
-            }
-
-            // --- 4. ハンバーガーとSPメニューの開閉 ---
-            const hamburger = document.querySelector(".hamburger");
-            const spMenu = document.querySelector(".sp-menu");
-
-            if (hamburger && spMenu) {
-                hamburger.addEventListener("click", () => {
-                    hamburger.classList.toggle("open");
-                    spMenu.classList.toggle("active");
-                });
-
-                document.querySelectorAll(".sp-menu a").forEach(link => {
-                    link.addEventListener("click", () => {
-                        hamburger.classList.remove("open");
-                        spMenu.classList.remove("active");
-                    });
-                });
-            }
-        });
-    </script>
+    <script src="common.js"></script>
+    <script src="page.js"></script>
+</body>
 </body>
 
 </html>
