@@ -538,7 +538,7 @@ body.thanks {
     position: absolute;
     width: 14vw;
     right: 10%;
-    top: -30px;
+    top: -20px;
     z-index: 5;
 }
 
@@ -777,6 +777,28 @@ body.thanks {
         rgba(77, 106, 165, 0.93) 100%
     );
     background-size: cover;
+}
+/* --- ヘッダー --- */
+.all-work-page #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 4%;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-family: "Cormorant Garamond", serif;
+    z-index: 9999;
+    background: linear-gradient(
+        180deg,
+        rgba(39, 69, 85, 0.35) 0%,
+        rgba(39, 69, 85, 0.1) 60%,
+        rgba(0, 0, 0, 0) 100%
+    );
+
+    backdrop-filter: blur(8px); /* すりガラス効果*/
 }
 .title-wrap-works {
     display: flex;
@@ -1151,10 +1173,15 @@ body.thanks {
             rgba(99, 128, 185, 1) 8%,
             rgba(59, 155, 176, 0.7) 20%,
             rgba(99, 128, 185, 0.5) 30%,
-            rgba(251, 252, 237, 1) 45% 75%,
-            rgba(104, 134, 195, 0.7) 85%,
+            rgba(251, 252, 237, 1) 45% 72%,
+            rgba(104, 134, 195, 0.7) 88%,
             rgba(77, 106, 165, 1) 110%
         );
+    }
+    #hero,
+    .main-visual {
+        height: 90vh; /* 100vh から 75vh（画面の75%程度の高さ）に縮小 */
+        min-height: 480px; /* 最小高さを 600px から 480px に変更 */
     }
     #message,
     #about,
@@ -1219,7 +1246,7 @@ body.thanks {
     }
 
     .title-wrap-flow {
-        margin-top: 150px;
+        margin-top: 100px;
     }
 
     .cloud-set {
@@ -1244,7 +1271,8 @@ body.thanks {
     .moon2 {
         position: absolute;
         width: 22vw;
-        right: 8%;
+        right: 10%;
+        top: -20px;
     }
     .cloud-space {
         height: 200px;
@@ -1289,7 +1317,9 @@ body.thanks {
         width: 95%;
         margin-left: 0;
     }
-
+    .works-grid {
+        gap: 100px;
+    }
     .work-text,
     .work-text2 {
         font-size: 14px;
@@ -1299,6 +1329,10 @@ body.thanks {
     }
     .sub-title {
         margin: 15px 20px 100px;
+    }
+    #contact,
+    #flow {
+        margin-top: 150px;
     }
 
     /* --- スマホ時のボタン調整（全ボタン同一サイズ・余白に調整） --- */
@@ -1391,6 +1425,8 @@ body.thanks {
 
     .works-filter {
         gap: 5px;
+        margin-top: 50px;
+        margin-bottom: 80px;
     }
     .work-item-title {
         font-size: 20px;
