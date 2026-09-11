@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (moon2 && !moon2Fixed) {
                 moon2Fixed = true;
                 moon2.style.position = "fixed";
-                moon2.style.top = isMobile ? "70px" : "60px";
+                moon2.style.top = isMobile ? "70px" : "80px";
                 moon2.style.right = "10%";
                 moon2.style.zIndex = Z.moon;
             }
