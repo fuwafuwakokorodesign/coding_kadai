@@ -92,6 +92,51 @@ h2 {
 .hamburger {
     display: none;
 }
+/* ==========================================
+   ナビゲーション ホバー時下線アニメーション（修正版）
+========================================== */
+
+/* 1. PCヘッダーナビ・スマホメニュー・フッターナビ 共通リンク基本設定 */
+.header-nav a,
+.footer_nav a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+/* スマホメニュー用：幅を「文字サイズぴったり」に絞り、中央寄せにする */
+.sp-menu a {
+    position: relative;
+    display: inline-block;
+    width: fit-content; /* 横幅を文字幅に制限 */
+    margin: 0 auto; /* 中央に配置 */
+    text-decoration: none;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+/* 2. 下線の初期状態（透明・横幅0） */
+.header-nav a::after,
+.sp-menu a::after,
+.footer_nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: currentColor; /* 文字色に連動 */
+    transition: width 0.3s ease;
+}
+
+/* 3. ホバー時に横幅を100%（＝文字幅いっぱい）へ伸長 */
+.header-nav a:hover::after,
+.sp-menu a:hover::after,
+.footer_nav a:hover::after {
+    width: 100%;
+}
 
 /* --- コンタクトボタン ＆ 共通ボタンデザイン --- */
 .contact-btn,
@@ -290,6 +335,28 @@ textarea.c-form_input {
     font-size: 13px;
     line-height: 1;
     white-space: nowrap;
+}
+/* ロゴのホバー指定 */
+.logo a,
+.footer_logo a {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.logo a:hover,
+.footer_logo a:hover {
+    opacity: 0.65; /* 少し透ける */
+}
+/* SNSアイコンのホバー設定 */
+.footer_sns a img {
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.footer_sns a:hover img {
+    transform: translateY(-4px); /* 上に4pxふわっと浮く */
+    opacity: 0.75; /* 少し柔らかく透ける */
 }
 .thanks {
     background-image: linear-gradient(
@@ -722,6 +789,27 @@ body.thanks {
     width: 100%;
     margin: 60px auto 0;
 }
+/* ==========================================
+   「詳しく見る」ボタンのホバーアニメーション
+========================================== */
+
+.more {
+    transition: opacity 0.3s ease;
+}
+
+/* 矢印（画像）をスムーズに動かすための準備 */
+.more img {
+    transition: transform 0.3s ease;
+}
+
+/* ホバー時の動き */
+.more:hover {
+    opacity: 0.75; /* 全体がふんわり透ける */
+}
+
+.more:hover img {
+    transform: translateX(6px); /* 矢印だけ右に6pxスライドする */
+}
 
 .flow-wrap {
     max-width: 1000px;
@@ -767,6 +855,39 @@ body.thanks {
     color: rgba(77, 106, 165, 0.8);
     padding: 0 40px;
     text-align: left;
+}
+/* 下線から背景へ広がるアニメーション */
+.line-link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 2px 6px;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+/* 下線（初期状態：高さ2px） */
+.line-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* 初期状態の下線の太さ */
+    background-color: #fcfded; /* サイトで使われているクリーム色 */
+    border-radius: 4px;
+    z-index: -1;
+    transition: height 0.3s ease; /* 高さのアニメーション */
+}
+
+/* ホバー時：下線の高さが100%になって背景になる */
+.line-link:hover {
+    color: #4d6aa5; /* 文字色を濃い色にして読みやすく */
+}
+
+.line-link:hover::before {
+    height: 100%; /* 下線が上まで伸びて背景化 */
 }
 
 /* ==========================================
